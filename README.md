@@ -64,12 +64,15 @@ Navigate to the directory where you want to create the Dockerfile, e.g., /opt/do
 
 ``````
 cd /opt
-
+``````
+``````
 mkdir docker
-
+``````
+``````
 cd docker
 ``````
 ### Create a Dockerfile using a text editor (e.g., vi) and add the following content:
+make sure Dockerfile has an uppercase D
 ````
 FROM public.ecr.aws/docker/library/centos:latest          
 MAINTAINER QuantumCode
