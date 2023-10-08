@@ -118,4 +118,4 @@ To check if the Apache server is running and serving the content, open a web bro
 
 You should be able to see the content you pasted in the index.html file displayed in the browser.
 
-Congratulations! You have successfully set up an Apache web server inside a Docker container on an AWS EC2 instance.
+Congratulations! You have successfully set up an Apache web server inside a Docker container on an AWS EC2 instance...
