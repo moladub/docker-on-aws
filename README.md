@@ -19,19 +19,19 @@ Log in to the AWS Management Console using your AWS credentials.
 
 Create an EC2 instance with your desired specifications, e.g., Amazon Linux AMI, t2.micro. Be sure to associate your SSH key pair with the instance during launch.
 
-### Step 3: SSH into the EC2 Instance
+### Step 3: SSH into the EC2 Instance (screenshot terminal output)
 
 Use the private key of your SSH key pair to securely connect to the EC2 instance.
 
 ```bash
 ssh -i <path-to-private-key> ec2-user@<instance-public-ip>
 ```
-### Step 4: Update Package Manager and 
+### Step 4: Update Package Manager and install docker 
 Update the package manager:
 ```
 sudo yum update -y
 ``````
-Install Docker for Linux Platform
+Install Docker for Linux Platform and screenshot output
 ``````
 sudo yum install docker -y 
 ``````
@@ -54,12 +54,12 @@ Get information about Docker:
 ``````
 docker info
 ``````
-### Step 6: Pull the Docker Image
+### Step 6: Pull the Docker Image (screenshot output)
 Pull a Docker image from a registry, for example:
 ``````
 docker pull public.ecr.aws/docker/library/centos:latest
 ``````
-### Step 7: Create a Dockerfile
+### Step 7: Create a Dockerfile 
 Navigate to the directory where you want to create the Dockerfile, e.g., /opt/docker/.
 
 ``````
@@ -71,7 +71,8 @@ mkdir docker
 ``````
 cd docker
 ``````
-### Create a Dockerfile using a text editor (e.g., vi) and add the following content:
+### Create a Dockerfile using a text editor (e.g., vi) and add the following content:     (screenshot editor with code pasted)
+
 make sure Dockerfile has an uppercase D
 ````
 FROM public.ecr.aws/docker/library/centos:latest          
@@ -90,30 +91,30 @@ save and exit the editor
 ### Step 8: Create the index.html File
 Create the index.html file using a text editor (e.g., vi) and paste the content index.html file:
 
-### Step 9: Build the Docker Image
+### Step 9: Build the Docker Image and screenshot build
 Build the Docker image with the Dockerfile in the current directory (.) and tag it as "quantum_apache_image":
 
 ``````
 docker build -t quantum_apache_image .
 ``````
-### Step 10: List Docker Images
+### Step 10: List Docker Images   (screenshot)
 List the Docker images to verify that the "quantum_apache_image" has been successfully built:
 ``````
 docker images
 ``````
-### Step 11: Run the Docker Container
+### Step 11: Run the Docker Container (screenshot)
 Run the Docker container in detached mode (-d) and map port 80 from the container to port 80 on the host:
 
 ``````
 docker run -itd -p 80:80 quantum_apache_image
 ``````
-### Step 11: Check Running Containers
+### Step 11: Check Running Containers (screenshot)
 List the running Docker containers to verify that the "quantum_apache_image" container is running:
 
 ``````
 docker ps
 ``````
-### Step 12: Verify Apache Server
+### Step 12: Verify Apache Server  (screenshot)
 To check if the Apache server is running and serving the content, open a web browser and enter the IP address of the EC2 instance.
 
 You should be able to see the content you pasted in the index.html file displayed in the browser.
